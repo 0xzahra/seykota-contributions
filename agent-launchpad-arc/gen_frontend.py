@@ -17,7 +17,8 @@ out = {
     "AgentLaunchpad": DEP["AgentLaunchpad"]["address"],
     "abi": DEP["AgentLaunchpad"]["abi"],
 }
-os.makedirs(os.path.join(HERE, "frontend"), exist_ok=True)
-open(os.path.join(HERE, "frontend", "config.js"), "w").write(
+os.makedirs(os.path.join(HERE, "frontend"), exist_ok=True)  # legacy
+# config.js is a SIBLING of index.html so it works on a static host (GitHub Pages)
+open(os.path.join(HERE, "config.js"), "w").write(
     "const CONFIG = " + json.dumps(out, indent=2) + ";\n")
-print("wrote frontend/config.js (rpc direct, lUSD abi included)")
+print("wrote config.js (project root, rpc direct, lUSD abi included)")

@@ -27,7 +27,7 @@ class H(BaseHTTPRequestHandler):
         if self.path in ("/", "/index.html"):
             return self._send(open(os.path.join(HERE, "index.html"), "rb").read(), "text/html")
         if self.path == "/config.js":
-            return self._send(open(os.path.join(HERE, "frontend", "config.js"), "rb").read(), "text/javascript")
+            return self._send(open(os.path.join(HERE, "config.js"), "rb").read(), "text/javascript")
         self.send_response(404); self.end_headers()
 
     def do_OPTIONS(self):
