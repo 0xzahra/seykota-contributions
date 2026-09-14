@@ -1,0 +1,5 @@
+.env
+deployment.json
+build.json
+__pycache__/
+.gh_token
